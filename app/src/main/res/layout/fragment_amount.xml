@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="flowControlViewModel"
+            type="com.example.purchase.viewmodel.FlowControlViewModel" />
+        <variable
+            name="amountViewModel"
+            type="com.example.purchase.viewmodel.AmountViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.fragments.AmountFragment">
+
+        <TextView
+            android:id="@+id/txtAmountSubtitle"
+            style="@style/subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/amount_which_amount"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="@dimen/internal_vertical_margin"
+            />
+
+
+        <TextView
+            android:id="@+id/txtCurrencySymbol"
+            style="@style/edit_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/amount_currencySymbol"
+            app:layout_constraintTop_toTopOf="@id/editAmount"
+            app:layout_constraintEnd_toStartOf="@id/editAmount"
+            app:layout_constraintBottom_toBottomOf="@id/editAmount"
+            />
+
+        <EditText
+            android:id="@+id/editAmount"
+            style="@style/edit_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@={amountViewModel.amount}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtAmountSubtitle"
+            android:inputType="numberDecimal"
+            />
+
+        <TextView
+            android:id="@+id/minAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/internal_vertical_margin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editAmount"
+            android:text='@{ @string/amount_min + " " + amountViewModel.MIN_AMOUNT }'
+            />
+
+        <TextView
+            android:id="@+id/maxAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/internal_vertical_margin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/minAmount"
+            android:text='@{ @string/amount_max + " " + amountViewModel.MAX_AMOUNT }'
+            />
+
+
+        <TextView
+            android:id="@+id/author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/internal_vertical_margin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/btnAmountNext"
+            android:textAlignment="center"
+            android:text='@{ @string/author + "\n\n" + @string/authorName + "\n" + @string/authorEmail + "\n" + @string/authorPhone + "\n" + @string/date }'
+            />
+
+        <Button
+            android:id="@+id/btnAmountNext"
+            style="@style/button_next"
+            android:layout_width="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

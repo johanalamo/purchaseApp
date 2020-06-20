@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">purchase</string>
+
+    <!-- Author section -->
+    <string name="author">Author</string>
+    <string name="authorName">Johan Alamo</string>
+    <string name="authorEmail">johan.alamo@gmail.com</string>
+    <string name="authorPhone">+54.911.27815171</string>
+    <string name="date">June 2020. Argentina</string>
+
+    <!-- General section -->
+    <string name="general_next">Next</string>
+    <string name="general_in_construction">In construction</string>
+    <string name="general_network_error">Network error.</string>
+    <string name="general_try_again">Try again</string>
+    <string name="general_not_initialized">Not initialized</string>
+
+    <!-- Amount section -->
+    <string name="amount_title">Enter amount</string>
+    <string name="amount_amount">Amount</string>
+    <string name="amount_which_amount">Which is the amount?</string>
+    <string name="amount_currencySymbol">$</string>
+    <string name="amount_min">Minimum amount:</string>
+    <string name="amount_max">Maximum amount:</string>
+
+    <!-- Payment method section -->
+    <string name="payment_method_title">Select payment method</string>
+    <string name="payment_method_not_found">No payment methods found </string>
+
+    <!-- Bank section -->
+    <string name="bank_title">Select your bank/entity</string>
+    <string name="bank_in_construction">The bank/entity section is in construction</string>
+
+    <!-- Installment section -->
+    <string name="installment_title">Installment list</string>
+    <string name="installment_in_construction">The installment section is in construction</string>
+
+    <!-- Confirm section -->
+    <string name="confirm_title">Confirm your purchase</string>
+    <string name="confirm_confirm">Confirm</string>
+    <string name="confirm_purchase_done">Purchase done</string>
+    <string name="confirm_summary">Summary</string>
+    <string name="confirm_payment_method">Payment method</string>
+    <string name="confirm_bank">Bank/Entity</string>
+    <string name="confirm_installment">Installments</string>
+</resources>

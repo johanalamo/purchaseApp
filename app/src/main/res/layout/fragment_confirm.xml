@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="flowControlViewModel"
+            type="com.example.purchase.viewmodel.FlowControlViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.fragments.ConfirmFragment">
+
+        <TextView
+            android:id="@+id/txtConfirmSubtitle"
+            style="@style/subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/confirm_summary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="@dimen/internal_vertical_margin"
+            />
+
+        <TextView
+            android:id="@+id/amountWord"
+            style="@style/subtitle2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/amount_amount"
+            app:layout_constraintTop_toBottomOf="@+id/txtConfirmSubtitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/internal_vertical_margin"
+            />
+
+        <TextView
+            android:id="@+id/txtConfirmAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/edit_amount"
+            android:text='@{ @string/amount_currencySymbol + flowControlViewModel.amount  }'
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/amountWord"
+            />
+
+        <TextView
+            android:id="@+id/paymentMethodWord"
+            style="@style/subtitle2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/confirm_payment_method"
+            app:layout_constraintTop_toBottomOf="@+id/txtConfirmAmount"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/internal_vertical_margin"
+        />
+
+        <ImageView
+            android:id="@+id/paymentMethodImage"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="30dp"
+            app:layout_constraintTop_toBottomOf="@id/paymentMethodWord"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/paymentMethod"
+            style="@style/content"
+            android:text="@{ flowControlViewModel.paymentMethod.name }"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:textAppearance="?attr/textAppearanceListItem"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/paymentMethodImage"
+            app:layout_constraintBottom_toBottomOf="@id/paymentMethodImage"
+            />
+
+        <TextView
+            android:id="@+id/bankWord"
+            style="@style/subtitle2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/confirm_bank"
+            app:layout_constraintTop_toBottomOf="@+id/paymentMethod"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/internal_vertical_margin"
+            />
+
+        <ImageView
+            android:id="@+id/bankImage"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@android:drawable/ic_menu_preferences"
+            android:layout_marginStart="30dp"
+            app:layout_constraintTop_toBottomOf="@id/bankWord"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/bank"
+            style="@style/content"
+            android:text="@string/general_in_construction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:textAppearance="?attr/textAppearanceListItem"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/bankImage"
+            app:layout_constraintBottom_toBottomOf="@id/bankImage"
+            />
+
+        <TextView
+            android:id="@+id/installmentWord"
+            style="@style/subtitle2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/confirm_installment"
+            app:layout_constraintTop_toBottomOf="@+id/bank"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/internal_vertical_margin"
+            />
+
+        <ImageView
+            android:id="@+id/installmentImage"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@android:drawable/ic_menu_preferences"
+            android:layout_marginStart="30dp"
+            app:layout_constraintTop_toBottomOf="@id/installmentWord"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/installment"
+            style="@style/content"
+            android:text="@string/general_in_construction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:textAppearance="?attr/textAppearanceListItem"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/installmentImage"
+            app:layout_constraintBottom_toBottomOf="@id/installmentImage"
+            />
+
+
+
+
+        <Button
+            android:id="@+id/btnConfirm"
+            style="@style/button_confirm"
+            android:layout_width="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

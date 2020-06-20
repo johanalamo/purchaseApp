@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/amountFragment">
+
+    <fragment
+        android:id="@+id/amountFragment"
+        android:name="com.example.purchase.view.fragments.AmountFragment"
+        android:label="amount_fragment"
+        tools:layout="@layout/fragment_amount" >
+        <action
+            android:id="@+id/action_amountFragment_to_paymentMethodsFragment"
+            app:destination="@id/paymentMethodsFragment"
+            app:enterAnim="@anim/nav_default_enter_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/paymentMethodsFragment"
+        android:name="com.example.purchase.view.fragments.PaymentMethodsFragment"
+        android:label="fragment_payment_methods_list"
+        tools:layout="@layout/fragment_payment_methods_list" >
+        <action
+            android:id="@+id/action_paymentMethodsFragment_to_banksFragment"
+            app:destination="@id/banksFragment"
+            app:enterAnim="@anim/fragment_open_enter" />
+    </fragment>
+    <fragment
+        android:id="@+id/banksFragment"
+        android:name="com.example.purchase.view.fragments.BanksFragment"
+        android:label="fragment_banks_list"
+        tools:layout="@layout/fragment_banks_list" >
+        <action
+            android:id="@+id/action_banksFragment_to_installmentsFragment"
+            app:destination="@id/installmentsFragment"
+            app:popEnterAnim="@anim/fragment_fade_enter" />
+    </fragment>
+    <fragment
+        android:id="@+id/installmentsFragment"
+        android:name="com.example.purchase.view.fragments.InstallmentsFragment"
+        android:label="fragment_installments"
+        tools:layout="@layout/fragment_installments" >
+        <action
+            android:id="@+id/action_installmentsFragment_to_confirmFragment"
+            app:destination="@id/confirmFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/confirmFragment"
+        android:name="com.example.purchase.view.fragments.ConfirmFragment"
+        android:label="fragment_confirm"
+        tools:layout="@layout/fragment_confirm" >
+        <action
+            android:id="@+id/action_confirmFragment_to_amountFragment"
+            app:destination="@id/amountFragment" />
+    </fragment>
+</navigation>
